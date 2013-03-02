@@ -3,10 +3,10 @@ clear
 
 % input:
 z=1; % start point
-E=0.00001; % accuracy
+E=0.0000001; % accuracy
 syms x   % x is a symbol, not a number   
 f=x^2/2-sin(x);% function to analyze
-n=10;% max amount of iterations
+n=100;% max amount of iterations
 m=50;% characters after comma
 
 %Newton algoritm:
@@ -23,5 +23,4 @@ for i=1:n
     end
 end
 
-extremum=vpa(x0, m)% equation solution
-% wolfram's value=0.7390851332151606416553120876738734040134
+minimum=vpa(subs(f,x,x0), m)% equation solution
